@@ -1,0 +1,14 @@
+{
+  "region": "baltimore",
+  "year": 2013,
+  "manufacturer": "ford",
+  "model": "mustang",
+  "fuel": "gas",
+  "odometer": 85000,
+  "title_status": "clean",
+  "transmission": "manual",
+  "state": "md",
+  "lat": 39.1618,
+  "long": -76.6297
+}
+
