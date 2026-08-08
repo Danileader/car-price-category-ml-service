@@ -2,7 +2,7 @@
 
 Сервис для предсказания категории стоимости автомобиля по параметрам объявления.
 
-Проект делался как практическая работа по полному циклу ML-задачи: подготовка данных, обучение модели, сохранение пайплайна, API для инференса и простой мониторинг нагрузки.
+Проект делался как практическая работа по базовому циклу ML-сервиса: первичная проверка данных, обучение модели, сохранение пайплайна, API для инференса и простой мониторинг нагрузки.
 
 ## Что внутри
 
@@ -22,7 +22,7 @@ car-price-category-ml-service/
     main.py                         # FastAPI application
   model/
     train.py                        # training script
-    data/cars_prepared.csv          # prepared training data
+    data/cars_prepared.csv          # training data used by the model
     artifacts/cars_pipe.pkl         # trained model artifact
   monitoring/
     batch_predict_scheduler.py      # scheduled predictions every 10 seconds
@@ -62,7 +62,7 @@ car-price-category-ml-service/
 - Random Forest
 - XGBoost, if installed
 
-Лучшая модель по cross-validation обучается на подготовленном датасете и сохраняется в:
+Лучшая модель по cross-validation обучается на датасете `cars_prepared.csv` и сохраняется в:
 
 ```text
 model/artifacts/cars_pipe.pkl
@@ -155,7 +155,7 @@ python -m model.train
 
 ## Scheduler
 
-Scheduler берет случайную часть подготовленного датасета и каждые 10 секунд выводит распределение предсказанных категорий:
+Scheduler берет случайную часть датасета и каждые 10 секунд выводит распределение предсказанных категорий:
 
 ```bash
 python monitoring/batch_predict_scheduler.py
@@ -197,4 +197,4 @@ docker compose up -d
 
 ## Короткое описание для резюме
 
-Разработал ML-сервис для предсказания категории стоимости автомобиля: подготовил данные, обучил и сериализовал `sklearn`/`XGBoost` pipeline, реализовал FastAPI endpoint для инференса, batch scheduler и демо-мониторинг нагрузки через Grafana/MariaDB.
+Разработал ML-сервис для предсказания категории стоимости автомобиля: провел первичную проверку данных, обучил и сериализовал `sklearn`/`XGBoost` pipeline с обработкой пропусков и категориальных признаков, реализовал FastAPI endpoint для инференса, batch scheduler и демо-мониторинг нагрузки через Grafana/MariaDB.
