@@ -60,7 +60,7 @@ car-price-category-ml-service/
 
 - Logistic Regression
 - Random Forest
-- XGBoost, if installed
+- XGBoost, если установлен
 
 Лучшая модель по cross-validation обучается на датасете `cars_prepared.csv` и сохраняется в:
 
