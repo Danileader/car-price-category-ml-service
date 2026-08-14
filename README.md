@@ -194,3 +194,7 @@ docker compose up -d
 - Логировать реальные запросы API и latency вместо полностью искусственных метрик.
 - Добавить Docker Compose для API и мониторинга в одном окружении.
 - Добавить тесты для endpoint `/predict`.
+
+## Стек
+
+Python, Pandas, scikit-learn, XGBoost, FastAPI, joblib, APScheduler, Docker, Grafana, MariaDB, Postman.
